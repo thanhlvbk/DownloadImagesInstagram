@@ -1,0 +1,32 @@
+{
+  "name": "download-images-instagram",
+  "version": "0.1.0",
+  "description": "",
+  "main": ".stylelintrc.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:thanhlvbk/download-images-instagram.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thanhlvbk/download-images-instagram/issues"
+  },
+  "homepage": "https://github.com/thanhlvbk/download-images-instagram",
+  "dependencies": {
+    "express": "^4.16.2",
+    "next": "^5.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {}
+}
