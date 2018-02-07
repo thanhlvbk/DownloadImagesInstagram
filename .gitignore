@@ -41,7 +41,6 @@ bin/.env
 bin/.clean
 
 *.env
-.next/
 
 
 
