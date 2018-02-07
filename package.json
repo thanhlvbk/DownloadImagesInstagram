@@ -5,7 +5,8 @@
   "main": ".stylelintrc.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "build": "next build"
   },
   "repository": {
     "type": "git",

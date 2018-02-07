@@ -67,25 +67,24 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
-/******/ ({
+/******/ ([
+/* 0 */,
+/* 1 */,
+/* 2 */,
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ "/var/www/download-images-instagram/node_modules/next/dist/pages/_error.js":
+module.exports = __webpack_require__(4);
+
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports) {
 
 module.exports = require("/var/www/download-images-instagram/node_modules/next/dist/pages/_error.js");
 
-/***/ }),
-
-/***/ 0:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("/var/www/download-images-instagram/node_modules/next/dist/pages/_error.js");
-
-
 /***/ })
-
-/******/ });
-//# sourceMappingURL=_error.js.map
+/******/ ]);
