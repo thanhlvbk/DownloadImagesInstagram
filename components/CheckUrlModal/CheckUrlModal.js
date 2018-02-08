@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Dialog from '../Dialog'
+import Button from '../Button'
 
 class CheckUrlModal extends React.PureComponent {
   constructor(props) {
@@ -13,13 +14,14 @@ class CheckUrlModal extends React.PureComponent {
     return (
       <React.Fragment>
         <Dialog
-          actions={[]}
+          actions={[
+            <Button key={0} onClick={closeModal} color="accent" ripple>
+              Ok
+            </Button>,
+          ]}
           close={closeModal}
           open={showModal}
-          style={{
-            zIndex: '11',
-          }}
-          styleBackdrop={{zIndex: '10'}}
+          styleBackdrop={{zIndex: '10', height: '100%', position: 'fixed'}}
         >
           {error}
         </Dialog>

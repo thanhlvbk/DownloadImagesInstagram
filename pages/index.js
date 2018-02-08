@@ -27,26 +27,19 @@ class Index extends React.Component {
   }
 
   checkUrl = value => {
-    const pattern = new RegExp(
-      '^(https?:\\/\\/)?' + // protocol
-      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|' + // domain name
-      '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-      '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-        '(\\#[-a-z\\d_]*)?$',
-      'i',
-    ) // fragment locator
-    if (!pattern.test(value)) {
+    const pattern = new RegExp('^(?:[a-z]+:)?//', 'i')
+
+    if (!pattern.test(value) && value.length > 0) {
       this.setState(prevState => ({
         ...prevState,
         showCheckUrlModal: true,
-        error: 'String is not url',
+        error: 'Invalid URL',
       }))
     } else if (value.indexOf("instagram.com") < 0) {
       this.setState(prevState => ({
         ...prevState,
         showCheckUrlModal: true,
-        error: 'Url is not instagram',
+        error: 'Entered URL is not an instagram.com URL.',
       }))
     } else {
       this.getImageFromUrl(value)
@@ -120,7 +113,7 @@ class Index extends React.Component {
             margin-bottom: 0px
           }
           .dii-slogan {
-            font-size: 1.25em;
+            font-size: 21px;
             opacity: 0.75;
             margin: 0 0 0.75em;
           }
@@ -135,6 +128,15 @@ class Index extends React.Component {
           .dii-button {
             margin: 15px 0px !important
             text-transform: none !important;
+          }
+          .mdl-dialog {
+            z-index: 11;
+            padding: 0px;
+          }
+          .mdl-dialog__content {
+            padding: 20px
+            font-size: 14px;
+            color: #000 !important;
           }
         `}</style>
       </div>

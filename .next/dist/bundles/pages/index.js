@@ -389,69 +389,6 @@ Dialog.defaultProps = {
 
 
 /* harmony default export */ var components_Dialog = (Dialog_Dialog);
-// CONCATENATED MODULE: ./components/CheckUrlModal/CheckUrlModal.js
-var CheckUrlModal__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function CheckUrlModal__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function CheckUrlModal__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function CheckUrlModal__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-var CheckUrlModal_CheckUrlModal = function (_React$PureComponent) {
-  CheckUrlModal__inherits(CheckUrlModal, _React$PureComponent);
-
-  function CheckUrlModal(props) {
-    CheckUrlModal__classCallCheck(this, CheckUrlModal);
-
-    var _this = CheckUrlModal__possibleConstructorReturn(this, (CheckUrlModal.__proto__ || Object.getPrototypeOf(CheckUrlModal)).call(this, props));
-
-    _this.state = {};
-    return _this;
-  }
-
-  CheckUrlModal__createClass(CheckUrlModal, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          showModal = _props.showModal,
-          closeModal = _props.closeModal,
-          error = _props.error;
-
-      return external__react__default.a.createElement(
-        external__react__default.a.Fragment,
-        null,
-        external__react__default.a.createElement(
-          components_Dialog,
-          {
-            actions: [],
-            close: closeModal,
-            open: showModal,
-            style: {
-              zIndex: '11'
-            },
-            styleBackdrop: { zIndex: '10' }
-          },
-          error
-        )
-      );
-    }
-  }]);
-
-  return CheckUrlModal;
-}(external__react__default.a.PureComponent);
-
-CheckUrlModal_CheckUrlModal.defaultProps = {};
-
-/* harmony default export */ var components_CheckUrlModal_CheckUrlModal = (CheckUrlModal_CheckUrlModal);
-// CONCATENATED MODULE: ./components/CheckUrlModal/index.js
-
-
-/* harmony default export */ var components_CheckUrlModal = (components_CheckUrlModal_CheckUrlModal);
 // EXTERNAL MODULE: external "react-dom"
 var external__react_dom_ = __webpack_require__(11);
 var external__react_dom__default = /*#__PURE__*/__webpack_require__.n(external__react_dom_);
@@ -708,6 +645,71 @@ Button_Button.defaultProps = {
 
 
 /* harmony default export */ var components_Button = (components_Button_Button);
+// CONCATENATED MODULE: ./components/CheckUrlModal/CheckUrlModal.js
+var CheckUrlModal__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function CheckUrlModal__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function CheckUrlModal__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function CheckUrlModal__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+var CheckUrlModal_CheckUrlModal = function (_React$PureComponent) {
+  CheckUrlModal__inherits(CheckUrlModal, _React$PureComponent);
+
+  function CheckUrlModal(props) {
+    CheckUrlModal__classCallCheck(this, CheckUrlModal);
+
+    var _this = CheckUrlModal__possibleConstructorReturn(this, (CheckUrlModal.__proto__ || Object.getPrototypeOf(CheckUrlModal)).call(this, props));
+
+    _this.state = {};
+    return _this;
+  }
+
+  CheckUrlModal__createClass(CheckUrlModal, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          showModal = _props.showModal,
+          closeModal = _props.closeModal,
+          error = _props.error;
+
+      return external__react__default.a.createElement(
+        external__react__default.a.Fragment,
+        null,
+        external__react__default.a.createElement(
+          components_Dialog,
+          {
+            actions: [external__react__default.a.createElement(
+              components_Button,
+              { key: 0, onClick: closeModal, color: 'accent', ripple: true },
+              'Ok'
+            )],
+            close: closeModal,
+            open: showModal,
+            styleBackdrop: { zIndex: '10', height: '100%', position: 'fixed' }
+          },
+          error
+        )
+      );
+    }
+  }]);
+
+  return CheckUrlModal;
+}(external__react__default.a.PureComponent);
+
+CheckUrlModal_CheckUrlModal.defaultProps = {};
+
+/* harmony default export */ var components_CheckUrlModal_CheckUrlModal = (CheckUrlModal_CheckUrlModal);
+// CONCATENATED MODULE: ./components/CheckUrlModal/index.js
+
+
+/* harmony default export */ var components_CheckUrlModal = (components_CheckUrlModal_CheckUrlModal);
 // CONCATENATED MODULE: ./pages/index.js
 var pages__extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -749,24 +751,20 @@ var pages_Index = function (_React$Component) {
     };
 
     _this.checkUrl = function (value) {
-      var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
-      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|' + // domain name
-      '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-      '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-      '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
-      if (!pattern.test(value)) {
+      var pattern = new RegExp('^(?:[a-z]+:)?//', 'i');
+
+      if (!pattern.test(value) && value.length > 0) {
         _this.setState(function (prevState) {
           return pages__extends({}, prevState, {
             showCheckUrlModal: true,
-            error: 'String is not url'
+            error: 'Invalid URL'
           });
         });
       } else if (value.indexOf("instagram.com") < 0) {
         _this.setState(function (prevState) {
           return pages__extends({}, prevState, {
             showCheckUrlModal: true,
-            error: 'Url is not instagram'
+            error: 'Entered URL is not an instagram.com URL.'
           });
         });
       } else {
@@ -828,19 +826,19 @@ var pages_Index = function (_React$Component) {
       return external__react__default.a.createElement(
         'div',
         {
-          className: 'jsx-3555501451' + ' ' + 'dii-main'
+          className: 'jsx-3293787306' + ' ' + 'dii-main'
         },
         external__react__default.a.createElement(
           'h1',
           {
-            className: 'jsx-3555501451' + ' ' + 'dii-app-name'
+            className: 'jsx-3293787306' + ' ' + 'dii-app-name'
           },
           'Download Instagram'
         ),
         external__react__default.a.createElement(
           'span',
           {
-            className: 'jsx-3555501451' + ' ' + 'dii-slogan'
+            className: 'jsx-3293787306' + ' ' + 'dii-slogan'
           },
           'Instagram images download and preview'
         ),
@@ -858,7 +856,7 @@ var pages_Index = function (_React$Component) {
         image && external__react__default.a.createElement(
           external__react__default.a.Fragment,
           null,
-          external__react__default.a.createElement('img', { src: image, className: 'jsx-3555501451' + ' ' + 'dii-image'
+          external__react__default.a.createElement('img', { src: image, className: 'jsx-3293787306' + ' ' + 'dii-image'
           }),
           external__react__default.a.createElement(
             components_Button,
@@ -867,8 +865,8 @@ var pages_Index = function (_React$Component) {
           )
         ),
         external__react__default.a.createElement(style__default.a, {
-          styleId: '3555501451',
-          css: ['.dii-main{text-align:center;padding:0 40px;}', '.dii-app-name{font-weight:bold;margin-bottom:0px;}', '.dii-slogan{font-size:1.25em;opacity:0.75;margin:0 0 0.75em;}', '.dii-input{width:46% !important;}', '.dii-image{display:block;width:50%;margin:0 auto;}', '.dii-button{margin:15px 0px !important;text-transform:none !important;}']
+          styleId: '3293787306',
+          css: ['.dii-main{text-align:center;padding:0 40px;}', '.dii-app-name{font-weight:bold;margin-bottom:0px;}', '.dii-slogan{font-size:21px;opacity:0.75;margin:0 0 0.75em;}', '.dii-input{width:46% !important;}', '.dii-image{display:block;width:50%;margin:0 auto;}', '.dii-button{margin:15px 0px !important;text-transform:none !important;}', '.mdl-dialog{z-index:11;padding:0px;}', '.mdl-dialog__content{padding:20px;font-size:14px;color:#000 !important;}']
         })
       );
     }
