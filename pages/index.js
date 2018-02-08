@@ -66,7 +66,6 @@ class Index extends React.Component {
       const blob = new Blob([response.data], {type: `${response.headers['content-type']}`})
       const imageName = `${response.headers.expires}.${response.headers['content-type'].split('/')[1]}`
       
-      // response.data.pipe(FileSaver.saveAs(blob, imageName))
       FileSaver.saveAs(blob, imageName)
     })
   }
@@ -83,7 +82,7 @@ class Index extends React.Component {
     return (
       <div className="dii-main">
         <h1 className="dii-app-name">Download Instagram</h1>
-        <span className="dii-slogan">Instagram images download and preview</span>
+        <span className="dii-slogan">Instagram images preview and download </span>
         <Textfield
           onChangeValue={this.onChangeUrl}
           label={'Add link instagram ...'}
@@ -106,23 +105,24 @@ class Index extends React.Component {
         <style jsx global>{`
           .dii-main {
             text-align: center;
-            padding: 0 40px;
+            padding: 0 20px;
           }
           .dii-app-name {
+            font-size: 37px;
             font-weight: bold;
             margin-bottom: 0px
           }
           .dii-slogan {
-            font-size: 21px;
+            font-size: 14px;
             opacity: 0.75;
             margin: 0 0 0.75em;
           }
           .dii-input {
-            width: 46% !important
+            width: 87% !important
           }
           .dii-image {
             display: block;
-            width: 50%;
+            width: 95%;
             margin: 0 auto;
           }
           .dii-button {
@@ -137,6 +137,31 @@ class Index extends React.Component {
             padding: 20px
             font-size: 14px;
             color: #000 !important;
+          }
+          @media screen and (min-width: 480px) {
+            .dii-main {
+              padding: 0 40px;
+            }
+            .dii-app-name {
+              font-size: 56px;
+            }
+            .dii-slogan {
+              font-size: 21px;
+            }
+            .dii-input {
+              width: 63% !important
+            }
+            .dii-image {
+              width: 68%;
+            }
+          }
+          @media screen and (min-width: 840px) {
+            .dii-input {
+              width: 46% !important
+            }
+            .dii-image {
+              width: 50%;
+            }
           }
         `}</style>
       </div>
