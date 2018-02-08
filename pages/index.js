@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 import Textfield from '../components/Textfield'
 import CheckUrlModal from '../components/CheckUrlModal'
+import Button from '../components/Button'
 
 const cheerio = require('cheerio')
 const FileSaver = require('file-saver')
@@ -88,13 +89,13 @@ class Index extends React.Component {
     const {url, error, showCheckUrlModal, image} = this.state
     return (
       <div className="dii-main">
-        <h1>Download Instagram</h1>
-        <span>Instagram images download and preview</span>
+        <h1 className="dii-app-name">Download Instagram</h1>
+        <span className="dii-slogan">Instagram images download and preview</span>
         <Textfield
           onChangeValue={this.onChangeUrl}
           label={'Add link instagram ...'}
           value={url}
-          // style={{width: '100%'}}
+          className="dii-input"
         />
         <CheckUrlModal
           showModal={showCheckUrlModal}
@@ -103,13 +104,37 @@ class Index extends React.Component {
         />
         {image &&
           <React.Fragment>
-            <img src={image} />
-            <button onClick={this.downloadImage}>Download</button>
-          </React.Fragment>
+            <img src={image} className="dii-image"/>
+            <Button raised ripple color="accent" onClick={this.downloadImage} className="dii-button">
+              Download
+            </Button>
+          </ React.Fragment>
         }
         <style jsx global>{`
           .dii-main {
-            text-align: center
+            text-align: center;
+            padding: 0 40px;
+          }
+          .dii-app-name {
+            font-weight: bold;
+            margin-bottom: 0px
+          }
+          .dii-slogan {
+            font-size: 1.25em;
+            opacity: 0.75;
+            margin: 0 0 0.75em;
+          }
+          .dii-input {
+            width: 46% !important
+          }
+          .dii-image {
+            display: block;
+            width: 50%;
+            margin: 0 auto;
+          }
+          .dii-button {
+            margin: 15px 0px !important
+            text-transform: none !important;
           }
         `}</style>
       </div>
