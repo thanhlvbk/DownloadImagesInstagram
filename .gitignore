@@ -3,9 +3,6 @@
 # Dependencies
 node_modules/
 
-# Compiled output
-build
-
 # Runtime data
 data/db
 
@@ -41,7 +38,6 @@ bin/.env
 bin/.clean
 
 *.env
-.next/
 
 
 
