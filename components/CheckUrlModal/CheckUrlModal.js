@@ -16,15 +16,13 @@ class CheckUrlModal extends React.PureComponent {
           actions={[]}
           close={closeModal}
           open={showModal}
-          className="sd-modal--up sd-add-image-modal"
           style={{
             zIndex: '11',
           }}
-          styleBackdrop={{zIndex: '10',}}
+          styleBackdrop={{zIndex: '10'}}
         >
           {error}
         </Dialog>
-        <style jsx global>{``}</style>
       </React.Fragment>
     )
   }

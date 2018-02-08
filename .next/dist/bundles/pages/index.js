@@ -392,8 +392,6 @@ Dialog.defaultProps = {
 // CONCATENATED MODULE: ./components/CheckUrlModal/CheckUrlModal.js
 var CheckUrlModal__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-
-
 function CheckUrlModal__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function CheckUrlModal__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -433,18 +431,13 @@ var CheckUrlModal_CheckUrlModal = function (_React$PureComponent) {
             actions: [],
             close: closeModal,
             open: showModal,
-            className: 'sd-modal--up sd-add-image-modal',
             style: {
               zIndex: '11'
             },
             styleBackdrop: { zIndex: '10' }
           },
           error
-        ),
-        external__react__default.a.createElement(style__default.a, {
-          styleId: '2085888330',
-          css: []
-        })
+        )
       );
     }
   }]);
