@@ -4,9 +4,6 @@ import axios from 'axios'
 import Router from 'next/router'
 import Textfield from '../components/Textfield'
 import CheckUrlModal from '../components/CheckUrlModal'
-import Button from '../components/Button'
-
-const FileSaver = require('file-saver')
 
 class Index extends React.Component {
   constructor(props) {
