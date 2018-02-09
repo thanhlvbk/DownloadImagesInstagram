@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
+import Router from 'next/router'
 import Textfield from '../components/Textfield'
 import CheckUrlModal from '../components/CheckUrlModal'
 import Button from '../components/Button'
 
-const cheerio = require('cheerio')
 const FileSaver = require('file-saver')
 
 class Index extends React.Component {
@@ -47,11 +47,11 @@ class Index extends React.Component {
   }
 
   getImageFromUrl = (value) => {
-    axios.get(value)
-    .then( (response) => {
-      const $ = cheerio.load(response.data)
+    axios.get(`${window.location.href}get-image/${value.split("/").toString()}`)
+    .then(response => {
       this.setState({
-        image: $('meta[property="og:image"]').attr('content')
+        url: '',
+        image: response.data.img
       })
     })
   }
@@ -108,7 +108,7 @@ class Index extends React.Component {
             padding: 0 20px;
           }
           .dii-app-name {
-            font-size: 37px;
+            font-size: 35px;
             font-weight: bold;
             margin-bottom: 0px
           }

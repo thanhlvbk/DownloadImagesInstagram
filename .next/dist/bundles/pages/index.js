@@ -67,88 +67,32 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports) {
+/******/ ({
 
-module.exports = require("react");
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = require("prop-types");
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-module.exports = require("styled-jsx/style");
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-module.exports = require("classnames");
-
-/***/ }),
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(8);
-
-
-/***/ }),
-/* 8 */
+/***/ "./components/Button/Button.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__("react-dom");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_classnames__ = __webpack_require__("classnames");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_classnames__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__constants__ = __webpack_require__("./components/Button/constants.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils__ = __webpack_require__("./components/utils/index.js");
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-// EXTERNAL MODULE: external "styled-jsx/style"
-var style_ = __webpack_require__(2);
-var style__default = /*#__PURE__*/__webpack_require__.n(style_);
+var _jsxFileName = '/var/www/download-images-instagram/components/Button/Button.js';
 
-// EXTERNAL MODULE: external "react"
-var external__react_ = __webpack_require__(0);
-var external__react__default = /*#__PURE__*/__webpack_require__.n(external__react_);
-
-// EXTERNAL MODULE: external "prop-types"
-var external__prop_types_ = __webpack_require__(1);
-var external__prop_types__default = /*#__PURE__*/__webpack_require__.n(external__prop_types_);
-
-// EXTERNAL MODULE: external "axios"
-var external__axios_ = __webpack_require__(9);
-var external__axios__default = /*#__PURE__*/__webpack_require__.n(external__axios_);
-
-// EXTERNAL MODULE: external "classnames"
-var external__classnames_ = __webpack_require__(3);
-var external__classnames__default = /*#__PURE__*/__webpack_require__.n(external__classnames_);
-
-// CONCATENATED MODULE: ./components/utils/index.js
-function addClass(node, className) {
-  if (node.classList) {
-    node.classList.add(className);
-  } else {
-    node.className += ' ' + className;
-  }
-}
-
-function removeClass(node, className) {
-  if (node.classList) {
-    node.classList.remove(className);
-  } else {
-    node.className = node.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-  }
-}
-// CONCATENATED MODULE: ./components/Textfield/Textfield.js
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -161,278 +105,17 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Textfield_Textfield = function (_React$PureComponent) {
-  _inherits(Textfield, _React$PureComponent);
-
-  function Textfield() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, Textfield);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Textfield.__proto__ || Object.getPrototypeOf(Textfield)).call.apply(_ref, [this].concat(args))), _this), _this.onChange = function () {
-      var currentRowCount = _this.input.value.length;
-      var error = _this.props.error;
-
-      var checkValidate = _this.input.validity.valid;
-
-      if (currentRowCount > 0 && error !== null && !checkValidate) {
-        addClass(_this.textField, 'is-dirty');
-        addClass(_this.textField, 'is-invalid');
-      } else if (currentRowCount > 0 && (error === null || checkValidate)) {
-        addClass(_this.textField, 'is-dirty');
-        removeClass(_this.textField, 'is-invalid');
-      } else {
-        removeClass(_this.textField, 'is-dirty');
-        removeClass(_this.textField, 'is-invalid');
-      }
-
-      _this.props.onChangeValue(_this.input.value);
-    }, _this.downHandler = function () {
-      addClass(_this.textField, 'is-focused');
-    }, _this.upHandler = function () {
-      removeClass(_this.textField, 'is-focused');
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(Textfield, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          type = _props.type,
-          className = _props.className,
-          style = _props.style,
-          label = _props.label,
-          pattern = _props.pattern,
-          error = _props.error,
-          floatingLabel = _props.floatingLabel,
-          rows = _props.rows,
-          expandable = _props.expandable,
-          value = _props.value;
-
-      var classes = external__classnames__default()('mdl-textfield', 'mdl-js-textfield', 'is-upgraded', { 'mdl-textfield--floating-label': floatingLabel }, { 'mdl-textfield--expandable': expandable }, className);
-      var children = null;
-      if (type === 'input') {
-        children = external__react__default.a.createElement('input', {
-          className: 'mdl-textfield__input',
-          type: 'text',
-          pattern: pattern,
-          ref: function ref(input) {
-            _this2.input = input;
-          },
-          onChange: this.onChange,
-          value: value
-        });
-      }
-
-      return external__react__default.a.createElement(
-        'form',
-        { action: '#' },
-        external__react__default.a.createElement(
-          'div',
-          {
-            className: classes,
-            style: style,
-            ref: function ref(div) {
-              _this2.textField = div;
-            },
-            onFocus: this.downHandler,
-            onTouchStart: this.downHandler,
-            onTouchEnd: this.upHandler,
-            onBlur: this.upHandler
-          },
-          children,
-          expandable && label ? external__react__default.a.createElement(
-            'div',
-            { className: 'mdl-textfield__expandable-holder' },
-            external__react__default.a.createElement('input', { className: 'mdl-textfield__input', type: 'text', id: 'search-input' }),
-            external__react__default.a.createElement(
-              'label',
-              { className: 'mdl-textfield__label', htmlFor: 'sample-expandable' },
-              label
-            )
-          ) : external__react__default.a.createElement(
-            'label',
-            { className: 'mdl-textfield__label' },
-            label
-          ),
-          error !== null && external__react__default.a.createElement(
-            'span',
-            { className: 'mdl-textfield__error' },
-            error
-          )
-        )
-      );
-    }
-  }]);
-
-  return Textfield;
-}(external__react__default.a.PureComponent);
-
-Textfield_Textfield.defaultProps = {
-  type: 'input',
-  className: '',
-  style: {},
-  label: '',
-  pattern: '',
-  error: null,
-  rows: 1,
-  expandable: false,
-  floatingLabel: false,
-  value: ''
-};
-
-/* harmony default export */ var components_Textfield_Textfield = (Textfield_Textfield);
-// CONCATENATED MODULE: ./components/Textfield/index.js
 
 
-/* harmony default export */ var components_Textfield = (components_Textfield_Textfield);
-// EXTERNAL MODULE: external "lodash/isString"
-var isString_ = __webpack_require__(10);
-var isString__default = /*#__PURE__*/__webpack_require__.n(isString_);
+var debug = __webpack_require__("debug")('react-mdl-library:Button:Button');
 
-// CONCATENATED MODULE: ./components/Dialog/Dialog.js
-
-
-
-
-
-function Dialog(props) {
-  var actionsFullWidth = props.actionsFullWidth,
-      title = props.title,
-      actions = props.actions,
-      children = props.children,
-      className = props.className,
-      style = props.style,
-      open = props.open,
-      close = props.close,
-      disableBackdrop = props.disableBackdrop,
-      styleBackdrop = props.styleBackdrop;
-
-
-  var classes = external__classnames__default()('mdl-dialog', className);
-  var classesObfuscator = external__classnames__default()('mdl-layout__obfuscator', { 'is-visible': open });
-  var titleDialog = void 0;
-  if (isString__default()(title)) {
-    titleDialog = external__react__default.a.cloneElement(external__react__default.a.createElement(
-      'h4',
-      null,
-      title
-    ), {
-      className: external__classnames__default()('mdl-dialog__title')
-    });
-  }
-  if (title && external__react__default.a.isValidElement(title)) {
-    titleDialog = external__react__default.a.cloneElement(title, {
-      className: external__classnames__default()('mdl-dialog__title', title.props.className)
-    });
-  }
-  var actionsDialog = void 0;
-  if (actions) {
-    actionsDialog = external__react__default.a.cloneElement(external__react__default.a.createElement(
-      'div',
-      null,
-      actions
-    ), {
-      className: external__classnames__default()('mdl-dialog__actions', {
-        'mdl-dialog__actions--full-width': actionsFullWidth
-      })
-    });
-  }
-  if (disableBackdrop) {
-    return external__react__default.a.createElement(
-      'dialog',
-      { key: 0, className: classes, style: style, open: open },
-      titleDialog,
-      external__react__default.a.createElement(
-        'div',
-        { className: 'mdl-dialog__content' },
-        children
-      ),
-      actionsDialog
-    );
-  }
-  return [external__react__default.a.createElement(
-    'dialog',
-    { key: 0, className: classes, style: style, open: open },
-    titleDialog,
-    external__react__default.a.createElement(
-      'div',
-      { className: 'mdl-dialog__content' },
-      children
-    ),
-    actionsDialog
-  ), external__react__default.a.createElement('div', { key: 1, className: classesObfuscator, onClick: close, style: styleBackdrop })];
-}
-
-Dialog.defaultProps = {
-  actions: null,
-  title: null,
-  children: null,
-  className: '',
-  style: {},
-  open: false,
-  actionsFullWidth: false,
-  disableBackdrop: false,
-  styleBackdrop: {}
-};
-
-/* harmony default export */ var Dialog_Dialog = (Dialog);
-// CONCATENATED MODULE: ./components/Dialog/index.js
-
-
-/* harmony default export */ var components_Dialog = (Dialog_Dialog);
-// EXTERNAL MODULE: external "react-dom"
-var external__react_dom_ = __webpack_require__(11);
-var external__react_dom__default = /*#__PURE__*/__webpack_require__.n(external__react_dom_);
-
-// CONCATENATED MODULE: ./components/Button/constants.js
-var INITIAL_SCALE = 'scale(0.0001, 0.0001)';
-// export const INITIAL_SIZE = '1px'
-// export const INITIAL_OPACITY = '0.4'
-// export const FINAL_OPACITY = '0'
-var FINAL_SCALE = '';
-var RIPPLE_CENTER = 'mdl-ripple--center';
-var RIPPLE_EFFECT_IGNORE_EVENTS = 'mdl-js-ripple-effect--ignore-events';
-var RIPPLE = 'mdl-ripple';
-var IS_ANIMATING = 'is-animating';
-var IS_VISIBLE = 'is-visible';
-// CONCATENATED MODULE: ./components/Button/Button.js
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var Button__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-function Button__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Button__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function Button__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-
-
-
-var debug = __webpack_require__(12)('react-mdl-library:Button:Button');
-
-var Button_Button = function (_React$PureComponent) {
-  Button__inherits(Button, _React$PureComponent);
+var Button = function (_React$PureComponent) {
+  _inherits(Button, _React$PureComponent);
 
   function Button(props) {
-    Button__classCallCheck(this, Button);
+    _classCallCheck(this, Button);
 
-    var _this = Button__possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this, props));
 
     _this.getFrameCount = function () {
       return _this.frameCount;
@@ -443,11 +126,11 @@ var Button_Button = function (_React$PureComponent) {
     };
 
     _this.addAnimating = function () {
-      addClass(_this.rippleElement, IS_ANIMATING);
+      Object(__WEBPACK_IMPORTED_MODULE_5__utils__["a" /* addClass */])(_this.rippleElement, __WEBPACK_IMPORTED_MODULE_4__constants__["c" /* IS_ANIMATING */]);
     };
 
     _this.removeAnimating = function () {
-      removeClass(_this.rippleElement, IS_ANIMATING);
+      Object(__WEBPACK_IMPORTED_MODULE_5__utils__["b" /* removeClass */])(_this.rippleElement, __WEBPACK_IMPORTED_MODULE_4__constants__["c" /* IS_ANIMATING */]);
     };
 
     _this.downHandler = function (event) {
@@ -515,9 +198,9 @@ var Button_Button = function (_React$PureComponent) {
           scale = void 0;
       var offset = 'translate(' + x + 'px, ' + y + 'px)';
       if (start) {
-        scale = INITIAL_SCALE;
+        scale = __WEBPACK_IMPORTED_MODULE_4__constants__["b" /* INITIAL_SCALE */];
       } else {
-        scale = FINAL_SCALE;
+        scale = __WEBPACK_IMPORTED_MODULE_4__constants__["a" /* FINAL_SCALE */];
         offset = 'translate(' + _this.boundWidth / 2 + 'px, ' + _this.boundHeight / 2 + 'px)';
       }
       transformString = 'translate(-50%, -50%) ' + offset + scale;
@@ -533,11 +216,11 @@ var Button_Button = function (_React$PureComponent) {
     };
 
     _this.displayEffect = function () {
-      addClass(_this.rippleElement, IS_VISIBLE);
+      Object(__WEBPACK_IMPORTED_MODULE_5__utils__["a" /* addClass */])(_this.rippleElement, __WEBPACK_IMPORTED_MODULE_4__constants__["d" /* IS_VISIBLE */]);
     };
 
     _this.hideEffect = function () {
-      removeClass(_this.rippleElement, IS_VISIBLE);
+      Object(__WEBPACK_IMPORTED_MODULE_5__utils__["b" /* removeClass */])(_this.rippleElement, __WEBPACK_IMPORTED_MODULE_4__constants__["d" /* IS_VISIBLE */]);
     };
 
     _this.animFrameHandler = function () {
@@ -549,7 +232,7 @@ var Button_Button = function (_React$PureComponent) {
     };
 
     _this.componentDidMount = function () {
-      _this.buttonElement = external__react_dom__default.a.findDOMNode(_this);
+      _this.buttonElement = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(_this);
       var ripple = _this.props.ripple;
 
       if (ripple) {
@@ -581,7 +264,7 @@ var Button_Button = function (_React$PureComponent) {
    */
 
 
-  Button__createClass(Button, [{
+  _createClass(Button, [{
     key: 'render',
     value: function render() {
       debug('render button');
@@ -596,10 +279,10 @@ var Button_Button = function (_React$PureComponent) {
           ripple = _props.ripple,
           other = _objectWithoutProperties(_props, ['children', 'className', 'color', 'raised', 'fab', 'disabled', 'ripple']);
 
-      var classes = external__classnames__default()('mdl-button', 'mdl-js-button', { 'mdl-button--raised': raised }, { 'mdl-button--fab': fab }, { 'mdl-button--primary': color === 'primary' }, { 'mdl-button--accent': color === 'accent' }, { 'mdl-js-ripple-effect': ripple }, className);
+      var classes = __WEBPACK_IMPORTED_MODULE_3_classnames___default()('mdl-button', 'mdl-js-button', { 'mdl-button--raised': raised }, { 'mdl-button--fab': fab }, { 'mdl-button--primary': color === 'primary' }, { 'mdl-button--accent': color === 'accent' }, { 'mdl-js-ripple-effect': ripple }, className);
 
       if (ripple) {
-        return external__react__default.a.createElement(
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
           _extends({
             className: classes,
@@ -610,27 +293,55 @@ var Button_Button = function (_React$PureComponent) {
             onMouseLeave: this.upHandler,
             onTouchEnd: this.upHandler,
             onBlur: this.upHandler
-          }, other),
+          }, other, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 177
+            }
+          }),
           children,
-          external__react__default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'span',
-            { className: 'mdl-button__ripple-container' },
-            external__react__default.a.createElement('span', { className: 'mdl-ripple' })
+            { className: 'mdl-button__ripple-container', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 189
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'mdl-ripple', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 190
+              }
+            })
           )
         );
       }
-      return external__react__default.a.createElement(
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'button',
-        _extends({ className: classes, disabled: disabledProp }, other),
+        _extends({ className: classes, disabled: disabledProp }, other, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 196
+          }
+        }),
         children
       );
     }
   }]);
 
   return Button;
-}(external__react__default.a.PureComponent);
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.PureComponent);
 
-Button_Button.defaultProps = {
+Button.propTypes = {
+  children: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.node,
+  className: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string,
+  color: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string,
+  raised: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.bool,
+  fab: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.bool,
+  disabled: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.bool,
+  ripple: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.bool
+};
+
+Button.defaultProps = {
   children: null,
   className: '',
   color: '',
@@ -640,38 +351,83 @@ Button_Button.defaultProps = {
   ripple: false
 };
 
-/* harmony default export */ var components_Button_Button = (Button_Button);
-// CONCATENATED MODULE: ./components/Button/index.js
+/* harmony default export */ __webpack_exports__["a"] = (Button);
+
+/***/ }),
+
+/***/ "./components/Button/constants.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return INITIAL_SCALE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FINAL_SCALE; });
+/* unused harmony export RIPPLE_CENTER */
+/* unused harmony export RIPPLE_EFFECT_IGNORE_EVENTS */
+/* unused harmony export RIPPLE */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return IS_ANIMATING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return IS_VISIBLE; });
+var INITIAL_SCALE = 'scale(0.0001, 0.0001)';
+// export const INITIAL_SIZE = '1px'
+// export const INITIAL_OPACITY = '0.4'
+// export const FINAL_OPACITY = '0'
+var FINAL_SCALE = '';
+var RIPPLE_CENTER = 'mdl-ripple--center';
+var RIPPLE_EFFECT_IGNORE_EVENTS = 'mdl-js-ripple-effect--ignore-events';
+var RIPPLE = 'mdl-ripple';
+var IS_ANIMATING = 'is-animating';
+var IS_VISIBLE = 'is-visible';
+
+/***/ }),
+
+/***/ "./components/Button/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Button__ = __webpack_require__("./components/Button/Button.js");
 
 
-/* harmony default export */ var components_Button = (components_Button_Button);
-// CONCATENATED MODULE: ./components/CheckUrlModal/CheckUrlModal.js
-var CheckUrlModal__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0__Button__["a" /* default */]);
 
-function CheckUrlModal__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+/***/ }),
 
-function CheckUrlModal__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+/***/ "./components/CheckUrlModal/CheckUrlModal.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-function CheckUrlModal__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Dialog__ = __webpack_require__("./components/Dialog/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Button__ = __webpack_require__("./components/Button/index.js");
+var _jsxFileName = '/var/www/download-images-instagram/components/CheckUrlModal/CheckUrlModal.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
 
 
 
 
-var CheckUrlModal_CheckUrlModal = function (_React$PureComponent) {
-  CheckUrlModal__inherits(CheckUrlModal, _React$PureComponent);
+var CheckUrlModal = function (_React$PureComponent) {
+  _inherits(CheckUrlModal, _React$PureComponent);
 
   function CheckUrlModal(props) {
-    CheckUrlModal__classCallCheck(this, CheckUrlModal);
+    _classCallCheck(this, CheckUrlModal);
 
-    var _this = CheckUrlModal__possibleConstructorReturn(this, (CheckUrlModal.__proto__ || Object.getPrototypeOf(CheckUrlModal)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (CheckUrlModal.__proto__ || Object.getPrototypeOf(CheckUrlModal)).call(this, props));
 
     _this.state = {};
     return _this;
   }
 
-  CheckUrlModal__createClass(CheckUrlModal, [{
+  _createClass(CheckUrlModal, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -679,20 +435,33 @@ var CheckUrlModal_CheckUrlModal = function (_React$PureComponent) {
           closeModal = _props.closeModal,
           error = _props.error;
 
-      return external__react__default.a.createElement(
-        external__react__default.a.Fragment,
-        null,
-        external__react__default.a.createElement(
-          components_Dialog,
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.Fragment,
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15
+          }
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_2__Dialog__["a" /* default */],
           {
-            actions: [external__react__default.a.createElement(
-              components_Button,
-              { key: 0, onClick: closeModal, color: 'accent', ripple: true },
+            actions: [__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_3__Button__["a" /* default */],
+              { key: 0, onClick: closeModal, color: 'accent', ripple: true, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 18
+                }
+              },
               'Ok'
             )],
             close: closeModal,
             open: showModal,
-            styleBackdrop: { zIndex: '10', height: '100%', position: 'fixed' }
+            styleBackdrop: { zIndex: '10', height: '100%', position: 'fixed' },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 16
+            }
           },
           error
         )
@@ -701,49 +470,479 @@ var CheckUrlModal_CheckUrlModal = function (_React$PureComponent) {
   }]);
 
   return CheckUrlModal;
-}(external__react__default.a.PureComponent);
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.PureComponent);
 
-CheckUrlModal_CheckUrlModal.defaultProps = {};
+CheckUrlModal.propTypes = {
+  showModal: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool.isRequired,
+  closeModal: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func.isRequired,
+  error: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string.isRequired
+};
 
-/* harmony default export */ var components_CheckUrlModal_CheckUrlModal = (CheckUrlModal_CheckUrlModal);
-// CONCATENATED MODULE: ./components/CheckUrlModal/index.js
+CheckUrlModal.defaultProps = {};
 
+/* harmony default export */ __webpack_exports__["a"] = (CheckUrlModal);
 
-/* harmony default export */ var components_CheckUrlModal = (components_CheckUrlModal_CheckUrlModal);
-// CONCATENATED MODULE: ./pages/index.js
-var pages__extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+/***/ }),
 
-var pages__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+/***/ "./components/CheckUrlModal/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-
-
-function pages__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function pages__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function pages__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CheckUrlModal__ = __webpack_require__("./components/CheckUrlModal/CheckUrlModal.js");
 
 
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0__CheckUrlModal__["a" /* default */]);
+
+/***/ }),
+
+/***/ "./components/Dialog/Dialog.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__("classnames");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_isString__ = __webpack_require__("lodash/isString");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_isString___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_isString__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
+var _jsxFileName = '/var/www/download-images-instagram/components/Dialog/Dialog.js';
+
+
+
+
+
+function Dialog(props) {
+  var actionsFullWidth = props.actionsFullWidth,
+      title = props.title,
+      actions = props.actions,
+      children = props.children,
+      className = props.className,
+      style = props.style,
+      open = props.open,
+      close = props.close,
+      disableBackdrop = props.disableBackdrop,
+      styleBackdrop = props.styleBackdrop;
+
+
+  var classes = __WEBPACK_IMPORTED_MODULE_1_classnames___default()('mdl-dialog', className);
+  var classesObfuscator = __WEBPACK_IMPORTED_MODULE_1_classnames___default()('mdl-layout__obfuscator', { 'is-visible': open });
+  var titleDialog = void 0;
+  if (__WEBPACK_IMPORTED_MODULE_2_lodash_isString___default()(title)) {
+    titleDialog = __WEBPACK_IMPORTED_MODULE_0_react___default.a.cloneElement(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'h4',
+      {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        }
+      },
+      title
+    ), {
+      className: __WEBPACK_IMPORTED_MODULE_1_classnames___default()('mdl-dialog__title')
+    });
+  }
+  if (title && __WEBPACK_IMPORTED_MODULE_0_react___default.a.isValidElement(title)) {
+    titleDialog = __WEBPACK_IMPORTED_MODULE_0_react___default.a.cloneElement(title, {
+      className: __WEBPACK_IMPORTED_MODULE_1_classnames___default()('mdl-dialog__title', title.props.className)
+    });
+  }
+  var actionsDialog = void 0;
+  if (actions) {
+    actionsDialog = __WEBPACK_IMPORTED_MODULE_0_react___default.a.cloneElement(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35
+        }
+      },
+      actions
+    ), {
+      className: __WEBPACK_IMPORTED_MODULE_1_classnames___default()('mdl-dialog__actions', {
+        'mdl-dialog__actions--full-width': actionsFullWidth
+      })
+    });
+  }
+  if (disableBackdrop) {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'dialog',
+      { key: 0, className: classes, style: style, open: open, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43
+        }
+      },
+      titleDialog,
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'mdl-dialog__content', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45
+          }
+        },
+        children
+      ),
+      actionsDialog
+    );
+  }
+  return [__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'dialog',
+    { key: 0, className: classes, style: style, open: open, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 51
+      }
+    },
+    titleDialog,
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      { className: 'mdl-dialog__content', __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        }
+      },
+      children
+    ),
+    actionsDialog
+  ), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { key: 1, className: classesObfuscator, onClick: close, style: styleBackdrop, __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    }
+  })];
+}
+
+Dialog.propTypes = {
+  actions: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.node,
+  title: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.node,
+  children: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.node,
+  className: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.string,
+  style: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.object,
+  open: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.bool,
+  actionsFullWidth: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.bool,
+  close: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.func.isRequired,
+  disableBackdrop: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.bool,
+  styleBackdrop: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.object
+};
+
+Dialog.defaultProps = {
+  actions: null,
+  title: null,
+  children: null,
+  className: '',
+  style: {},
+  open: false,
+  actionsFullWidth: false,
+  disableBackdrop: false,
+  styleBackdrop: {}
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Dialog);
+
+/***/ }),
+
+/***/ "./components/Dialog/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Dialog__ = __webpack_require__("./components/Dialog/Dialog.js");
+
+
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0__Dialog__["a" /* default */]);
+
+/***/ }),
+
+/***/ "./components/Textfield/Textfield.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames__ = __webpack_require__("classnames");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_classnames__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__("./components/utils/index.js");
+var _jsxFileName = '/var/www/download-images-instagram/components/Textfield/Textfield.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
 
 
 
 
-var cheerio = __webpack_require__(13);
-var FileSaver = __webpack_require__(14);
+var Textfield = function (_React$PureComponent) {
+  _inherits(Textfield, _React$PureComponent);
 
-var pages_Index = function (_React$Component) {
-  pages__inherits(Index, _React$Component);
+  function Textfield() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, Textfield);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Textfield.__proto__ || Object.getPrototypeOf(Textfield)).call.apply(_ref, [this].concat(args))), _this), _this.onChange = function () {
+      var currentRowCount = _this.input.value.length;
+      var error = _this.props.error;
+
+      var checkValidate = _this.input.validity.valid;
+
+      if (currentRowCount > 0 && error !== null && !checkValidate) {
+        Object(__WEBPACK_IMPORTED_MODULE_3__utils__["a" /* addClass */])(_this.textField, 'is-dirty');
+        Object(__WEBPACK_IMPORTED_MODULE_3__utils__["a" /* addClass */])(_this.textField, 'is-invalid');
+      } else if (currentRowCount > 0 && (error === null || checkValidate)) {
+        Object(__WEBPACK_IMPORTED_MODULE_3__utils__["a" /* addClass */])(_this.textField, 'is-dirty');
+        Object(__WEBPACK_IMPORTED_MODULE_3__utils__["b" /* removeClass */])(_this.textField, 'is-invalid');
+      } else {
+        Object(__WEBPACK_IMPORTED_MODULE_3__utils__["b" /* removeClass */])(_this.textField, 'is-dirty');
+        Object(__WEBPACK_IMPORTED_MODULE_3__utils__["b" /* removeClass */])(_this.textField, 'is-invalid');
+      }
+
+      _this.props.onChangeValue(_this.input.value);
+    }, _this.downHandler = function () {
+      Object(__WEBPACK_IMPORTED_MODULE_3__utils__["a" /* addClass */])(_this.textField, 'is-focused');
+    }, _this.upHandler = function () {
+      Object(__WEBPACK_IMPORTED_MODULE_3__utils__["b" /* removeClass */])(_this.textField, 'is-focused');
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(Textfield, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          type = _props.type,
+          className = _props.className,
+          style = _props.style,
+          label = _props.label,
+          pattern = _props.pattern,
+          error = _props.error,
+          floatingLabel = _props.floatingLabel,
+          rows = _props.rows,
+          expandable = _props.expandable,
+          value = _props.value;
+
+      var classes = __WEBPACK_IMPORTED_MODULE_2_classnames___default()('mdl-textfield', 'mdl-js-textfield', 'is-upgraded', { 'mdl-textfield--floating-label': floatingLabel }, { 'mdl-textfield--expandable': expandable }, className);
+      var children = null;
+      if (type === 'input') {
+        children = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+          className: 'mdl-textfield__input',
+          type: 'text',
+          pattern: pattern,
+          ref: function ref(input) {
+            _this2.input = input;
+          },
+          onChange: this.onChange,
+          value: value,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58
+          }
+        });
+      }
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'form',
+        { action: '#', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72
+          }
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          {
+            className: classes,
+            style: style,
+            ref: function ref(div) {
+              _this2.textField = div;
+            },
+            onFocus: this.downHandler,
+            onTouchStart: this.downHandler,
+            onTouchEnd: this.upHandler,
+            onBlur: this.upHandler,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 73
+            }
+          },
+          children,
+          expandable && label ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'mdl-textfield__expandable-holder', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 86
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: 'mdl-textfield__input', type: 'text', id: 'search-input', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 87
+              }
+            }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'label',
+              { className: 'mdl-textfield__label', htmlFor: 'sample-expandable', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 88
+                }
+              },
+              label
+            )
+          ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'label',
+            { className: 'mdl-textfield__label', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 93
+              }
+            },
+            label
+          ),
+          error !== null && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'span',
+            { className: 'mdl-textfield__error', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 95
+              }
+            },
+            error
+          )
+        )
+      );
+    }
+  }]);
+
+  return Textfield;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.PureComponent);
+
+Textfield.propTypes = {
+  type: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  style: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  label: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  pattern: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  error: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  rows: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number,
+  expandable: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  floatingLabel: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  onChangeValue: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func.isRequired,
+  value: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string
+};
+
+Textfield.defaultProps = {
+  type: 'input',
+  className: '',
+  style: {},
+  label: '',
+  pattern: '',
+  error: null,
+  rows: 1,
+  expandable: false,
+  floatingLabel: false,
+  value: ''
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Textfield);
+
+/***/ }),
+
+/***/ "./components/Textfield/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Textfield__ = __webpack_require__("./components/Textfield/Textfield.js");
+
+
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0__Textfield__["a" /* default */]);
+
+/***/ }),
+
+/***/ "./components/utils/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = addClass;
+/* harmony export (immutable) */ __webpack_exports__["b"] = removeClass;
+function addClass(node, className) {
+  if (node.classList) {
+    node.classList.add(className);
+  } else {
+    node.className += ' ' + className;
+  }
+}
+
+function removeClass(node, className) {
+  if (node.classList) {
+    node.classList.remove(className);
+  } else {
+    node.className = node.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+  }
+}
+
+/***/ }),
+
+/***/ "./pages/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__("styled-jsx/style");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios__ = __webpack_require__("axios");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_router__ = __webpack_require__("next/router");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_next_router__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Textfield__ = __webpack_require__("./components/Textfield/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_CheckUrlModal__ = __webpack_require__("./components/CheckUrlModal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Button__ = __webpack_require__("./components/Button/index.js");
+var _jsxFileName = '/var/www/download-images-instagram/pages/index.js';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+var FileSaver = __webpack_require__("file-saver");
+
+var Index = function (_React$Component) {
+  _inherits(Index, _React$Component);
 
   function Index(props) {
-    pages__classCallCheck(this, Index);
+    _classCallCheck(this, Index);
 
-    var _this = pages__possibleConstructorReturn(this, (Index.__proto__ || Object.getPrototypeOf(Index)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Index.__proto__ || Object.getPrototypeOf(Index)).call(this, props));
 
     _this.onChangeUrl = function (value) {
       _this.setState(function (prevState) {
-        return pages__extends({}, prevState, {
+        return _extends({}, prevState, {
           url: value
         });
       });
@@ -755,14 +954,14 @@ var pages_Index = function (_React$Component) {
 
       if (!pattern.test(value) && value.length > 0) {
         _this.setState(function (prevState) {
-          return pages__extends({}, prevState, {
+          return _extends({}, prevState, {
             showCheckUrlModal: true,
             error: 'Invalid URL'
           });
         });
       } else if (value.indexOf("instagram.com") < 0) {
         _this.setState(function (prevState) {
-          return pages__extends({}, prevState, {
+          return _extends({}, prevState, {
             showCheckUrlModal: true,
             error: 'Entered URL is not an instagram.com URL.'
           });
@@ -773,10 +972,10 @@ var pages_Index = function (_React$Component) {
     };
 
     _this.getImageFromUrl = function (value) {
-      external__axios__default.a.get(value).then(function (response) {
-        var $ = cheerio.load(response.data);
+      __WEBPACK_IMPORTED_MODULE_3_axios___default.a.get(window.location.href + 'get-image/' + value.split("/").toString()).then(function (response) {
         _this.setState({
-          image: $('meta[property="og:image"]').attr('content')
+          url: '',
+          image: response.data.img
         });
       });
     };
@@ -784,7 +983,7 @@ var pages_Index = function (_React$Component) {
     _this.downloadImage = function () {
       var image = _this.state.image;
 
-      external__axios__default()({
+      __WEBPACK_IMPORTED_MODULE_3_axios___default()({
         method: 'get',
         url: image,
         responseType: 'blob'
@@ -798,7 +997,7 @@ var pages_Index = function (_React$Component) {
 
     _this.closeCheckUrlModal = function () {
       _this.setState(function (prevState) {
-        return pages__extends({}, prevState, {
+        return _extends({}, prevState, {
           showCheckUrlModal: false
         });
       });
@@ -813,7 +1012,7 @@ var pages_Index = function (_React$Component) {
     return _this;
   }
 
-  pages__createClass(Index, [{
+  _createClass(Index, [{
     key: 'render',
     value: function render() {
       var _state = this.state,
@@ -822,97 +1021,176 @@ var pages_Index = function (_React$Component) {
           showCheckUrlModal = _state.showCheckUrlModal,
           image = _state.image;
 
-      return external__react__default.a.createElement(
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
         'div',
         {
-          className: 'jsx-23719650' + ' ' + 'dii-main'
+          className: 'jsx-1424380737' + ' ' + 'dii-main',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 83
+          }
         },
-        external__react__default.a.createElement(
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
           'h1',
           {
-            className: 'jsx-23719650' + ' ' + 'dii-app-name'
+            className: 'jsx-1424380737' + ' ' + 'dii-app-name',
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 84
+            }
           },
           'Download Instagram'
         ),
-        external__react__default.a.createElement(
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
           'span',
           {
-            className: 'jsx-23719650' + ' ' + 'dii-slogan'
+            className: 'jsx-1424380737' + ' ' + 'dii-slogan',
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 85
+            }
           },
           'Instagram images preview and download '
         ),
-        external__react__default.a.createElement(components_Textfield, {
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_Textfield__["a" /* default */], {
           onChangeValue: this.onChangeUrl,
           label: 'Add link instagram ...',
           value: url,
-          className: 'dii-input'
+          className: 'dii-input',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 86
+          }
         }),
-        external__react__default.a.createElement(components_CheckUrlModal, {
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_CheckUrlModal__["a" /* default */], {
           showModal: showCheckUrlModal,
           closeModal: this.closeCheckUrlModal,
-          error: error
+          error: error,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 92
+          }
         }),
-        image && external__react__default.a.createElement(
-          external__react__default.a.Fragment,
-          null,
-          external__react__default.a.createElement('img', { src: image, className: 'jsx-23719650' + ' ' + 'dii-image'
+        image && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.Fragment,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 98
+            }
+          },
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: image, className: 'jsx-1424380737' + ' ' + 'dii-image',
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 99
+            }
           }),
-          external__react__default.a.createElement(
-            components_Button,
-            { raised: true, ripple: true, color: 'accent', onClick: this.downloadImage, className: 'dii-button' },
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_7__components_Button__["a" /* default */],
+            { raised: true, ripple: true, color: 'accent', onClick: this.downloadImage, className: 'dii-button', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 100
+              }
+            },
             'Download'
           )
         ),
-        external__react__default.a.createElement(style__default.a, {
-          styleId: '23719650',
-          css: ['.dii-main{text-align:center;padding:0 20px;}', '.dii-app-name{font-size:37px;font-weight:bold;margin-bottom:0px;}', '.dii-slogan{font-size:14px;opacity:0.75;margin:0 0 0.75em;}', '.dii-input{width:87% !important;}', '.dii-image{display:block;width:95%;margin:0 auto;}', '.dii-button{margin:15px 0px !important;text-transform:none !important;}', '.mdl-dialog{z-index:11;padding:0px;}', '.mdl-dialog__content{padding:20px;font-size:14px;color:#000 !important;}', '@media screen and (min-width:480px){.dii-main{padding:0 40px;}.dii-app-name{font-size:56px;}.dii-slogan{font-size:21px;}.dii-input{width:63% !important;}.dii-image{width:68%;}}', '@media screen and (min-width:840px){.dii-input{width:46% !important;}.dii-image{width:50%;}}']
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
+          styleId: '1424380737',
+          css: '.dii-main{text-align:center;padding:0 20px;}.dii-app-name{font-size:35px;font-weight:bold;margin-bottom:0px;}.dii-slogan{font-size:14px;opacity:0.75;margin:0 0 0.75em;}.dii-input{width:87% !important;}.dii-image{display:block;width:95%;margin:0 auto;}.dii-button{margin:15px 0px !important;text-transform:none !important;}.mdl-dialog{z-index:11;padding:0px;}.mdl-dialog__content{padding:20px;font-size:14px;color:#000 !important;}@media screen and (min-width:480px){.dii-main{padding:0 40px;}.dii-app-name{font-size:56px;}.dii-slogan{font-size:21px;}.dii-input{width:63% !important;}.dii-image{width:68%;}}@media screen and (min-width:840px){.dii-input{width:46% !important;}.dii-image{width:50%;}}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXdHMkIsQUFHK0IsQUFJSCxBQUtBLEFBTWxCLEFBRWlCLEFBTWQsQUFHVyxBQUtYLEFBS2lCLEFBR0EsQUFHQSxBQUlsQixBQUVhLEFBTWIsQUFFYSxVQVBaLEFBUUEsQ0E5QlksRUFJRyxDQWJMLENBYk8sQUFLSixBQTJCYixBQUdBLEFBR0EsR0ExQ2UsR0FjakIsQUErQkUsQUFRQSxFQTFCRixDQVRnQixHQUlpQixDQVpiLEFBcUJJLElBekJ6QixDQUxDLEtBa0JBLFFBUkEsSUFMQSxBQTBCQSxRQVRBIiwiZmlsZSI6InBhZ2VzL2luZGV4LmpzIiwic291cmNlUm9vdCI6Ii92YXIvd3d3L2Rvd25sb2FkLWltYWdlcy1pbnN0YWdyYW0iLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgUHJvcFR5cGVzIGZyb20gJ3Byb3AtdHlwZXMnXG5pbXBvcnQgYXhpb3MgZnJvbSAnYXhpb3MnXG5pbXBvcnQgUm91dGVyIGZyb20gJ25leHQvcm91dGVyJ1xuaW1wb3J0IFRleHRmaWVsZCBmcm9tICcuLi9jb21wb25lbnRzL1RleHRmaWVsZCdcbmltcG9ydCBDaGVja1VybE1vZGFsIGZyb20gJy4uL2NvbXBvbmVudHMvQ2hlY2tVcmxNb2RhbCdcbmltcG9ydCBCdXR0b24gZnJvbSAnLi4vY29tcG9uZW50cy9CdXR0b24nXG5cbmNvbnN0IEZpbGVTYXZlciA9IHJlcXVpcmUoJ2ZpbGUtc2F2ZXInKVxuXG5jbGFzcyBJbmRleCBleHRlbmRzIFJlYWN0LkNvbXBvbmVudCB7XG4gIGNvbnN0cnVjdG9yKHByb3BzKSB7XG4gICAgc3VwZXIocHJvcHMpXG4gICAgdGhpcy5zdGF0ZSA9IHtcbiAgICAgIHVybDogJycsXG4gICAgICBlcnJvcjogJycsXG4gICAgICBzaG93Q2hlY2tVcmxNb2RhbDogZmFsc2UsXG4gICAgICBpbWFnZTogbnVsbCxcbiAgICB9XG4gIH1cbiAgb25DaGFuZ2VVcmwgPSAodmFsdWUpID0+IHtcbiAgICB0aGlzLnNldFN0YXRlKHByZXZTdGF0ZSA9PiAoe1xuICAgICAgLi4ucHJldlN0YXRlLFxuICAgICAgdXJsOiB2YWx1ZSxcbiAgICB9KSlcbiAgICB0aGlzLmNoZWNrVXJsKHZhbHVlKVxuICB9XG5cbiAgY2hlY2tVcmwgPSB2YWx1ZSA9PiB7XG4gICAgY29uc3QgcGF0dGVybiA9IG5ldyBSZWdFeHAoJ14oPzpbYS16XSs6KT8vLycsICdpJylcblxuICAgIGlmICghcGF0dGVybi50ZXN0KHZhbHVlKSAmJiB2YWx1ZS5sZW5ndGggPiAwKSB7XG4gICAgICB0aGlzLnNldFN0YXRlKHByZXZTdGF0ZSA9PiAoe1xuICAgICAgICAuLi5wcmV2U3RhdGUsXG4gICAgICAgIHNob3dDaGVja1VybE1vZGFsOiB0cnVlLFxuICAgICAgICBlcnJvcjogJ0ludmFsaWQgVVJMJyxcbiAgICAgIH0pKVxuICAgIH0gZWxzZSBpZiAodmFsdWUuaW5kZXhPZihcImluc3RhZ3JhbS5jb21cIikgPCAwKSB7XG4gICAgICB0aGlzLnNldFN0YXRlKHByZXZTdGF0ZSA9PiAoe1xuICAgICAgICAuLi5wcmV2U3RhdGUsXG4gICAgICAgIHNob3dDaGVja1VybE1vZGFsOiB0cnVlLFxuICAgICAgICBlcnJvcjogJ0VudGVyZWQgVVJMIGlzIG5vdCBhbiBpbnN0YWdyYW0uY29tIFVSTC4nLFxuICAgICAgfSkpXG4gICAgfSBlbHNlIHtcbiAgICAgIHRoaXMuZ2V0SW1hZ2VGcm9tVXJsKHZhbHVlKVxuICAgIH1cbiAgfVxuXG4gIGdldEltYWdlRnJvbVVybCA9ICh2YWx1ZSkgPT4ge1xuICAgIGF4aW9zLmdldChgJHt3aW5kb3cubG9jYXRpb24uaHJlZn1nZXQtaW1hZ2UvJHt2YWx1ZS5zcGxpdChcIi9cIikudG9TdHJpbmcoKX1gKVxuICAgIC50aGVuKHJlc3BvbnNlID0+IHtcbiAgICAgIHRoaXMuc2V0U3RhdGUoe1xuICAgICAgICB1cmw6ICcnLFxuICAgICAgICBpbWFnZTogcmVzcG9uc2UuZGF0YS5pbWdcbiAgICAgIH0pXG4gICAgfSlcbiAgfVxuXG4gIGRvd25sb2FkSW1hZ2UgPSAoKSA9PiB7XG4gICAgY29uc3Qge2ltYWdlfSA9IHRoaXMuc3RhdGVcbiAgICBheGlvcyh7XG4gICAgICBtZXRob2Q6J2dldCcsXG4gICAgICB1cmw6aW1hZ2UsXG4gICAgICByZXNwb25zZVR5cGU6J2Jsb2InXG4gICAgfSkudGhlbigocmVzcG9uc2UpID0+IHtcbiAgICAgIGNvbnN0IGJsb2IgPSBuZXcgQmxvYihbcmVzcG9uc2UuZGF0YV0sIHt0eXBlOiBgJHtyZXNwb25zZS5oZWFkZXJzWydjb250ZW50LXR5cGUnXX1gfSlcbiAgICAgIGNvbnN0IGltYWdlTmFtZSA9IGAke3Jlc3BvbnNlLmhlYWRlcnMuZXhwaXJlc30uJHtyZXNwb25zZS5oZWFkZXJzWydjb250ZW50LXR5cGUnXS5zcGxpdCgnLycpWzFdfWBcbiAgICAgIFxuICAgICAgRmlsZVNhdmVyLnNhdmVBcyhibG9iLCBpbWFnZU5hbWUpXG4gICAgfSlcbiAgfVxuXG4gIGNsb3NlQ2hlY2tVcmxNb2RhbCA9ICgpID0+IHtcbiAgICB0aGlzLnNldFN0YXRlKHByZXZTdGF0ZSA9PiAoe1xuICAgICAgLi4ucHJldlN0YXRlLFxuICAgICAgc2hvd0NoZWNrVXJsTW9kYWw6IGZhbHNlLFxuICAgIH0pKVxuICB9XG5cbiAgcmVuZGVyKCkge1xuICAgIGNvbnN0IHt1cmwsIGVycm9yLCBzaG93Q2hlY2tVcmxNb2RhbCwgaW1hZ2V9ID0gdGhpcy5zdGF0ZVxuICAgIHJldHVybiAoXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImRpaS1tYWluXCI+XG4gICAgICAgIDxoMSBjbGFzc05hbWU9XCJkaWktYXBwLW5hbWVcIj5Eb3dubG9hZCBJbnN0YWdyYW08L2gxPlxuICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJkaWktc2xvZ2FuXCI+SW5zdGFncmFtIGltYWdlcyBwcmV2aWV3IGFuZCBkb3dubG9hZCA8L3NwYW4+XG4gICAgICAgIDxUZXh0ZmllbGRcbiAgICAgICAgICBvbkNoYW5nZVZhbHVlPXt0aGlzLm9uQ2hhbmdlVXJsfVxuICAgICAgICAgIGxhYmVsPXsnQWRkIGxpbmsgaW5zdGFncmFtIC4uLid9XG4gICAgICAgICAgdmFsdWU9e3VybH1cbiAgICAgICAgICBjbGFzc05hbWU9XCJkaWktaW5wdXRcIlxuICAgICAgICAvPlxuICAgICAgICA8Q2hlY2tVcmxNb2RhbFxuICAgICAgICAgIHNob3dNb2RhbD17c2hvd0NoZWNrVXJsTW9kYWx9XG4gICAgICAgICAgY2xvc2VNb2RhbD17dGhpcy5jbG9zZUNoZWNrVXJsTW9kYWx9XG4gICAgICAgICAgZXJyb3I9e2Vycm9yfVxuICAgICAgICAvPlxuICAgICAgICB7aW1hZ2UgJiZcbiAgICAgICAgICA8UmVhY3QuRnJhZ21lbnQ+XG4gICAgICAgICAgICA8aW1nIHNyYz17aW1hZ2V9IGNsYXNzTmFtZT1cImRpaS1pbWFnZVwiLz5cbiAgICAgICAgICAgIDxCdXR0b24gcmFpc2VkIHJpcHBsZSBjb2xvcj1cImFjY2VudFwiIG9uQ2xpY2s9e3RoaXMuZG93bmxvYWRJbWFnZX0gY2xhc3NOYW1lPVwiZGlpLWJ1dHRvblwiPlxuICAgICAgICAgICAgICBEb3dubG9hZFxuICAgICAgICAgICAgPC9CdXR0b24+XG4gICAgICAgICAgPC8gUmVhY3QuRnJhZ21lbnQ+XG4gICAgICAgIH1cbiAgICAgICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcbiAgICAgICAgICAuZGlpLW1haW4ge1xuICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICAgICAgcGFkZGluZzogMCAyMHB4O1xuICAgICAgICAgIH1cbiAgICAgICAgICAuZGlpLWFwcC1uYW1lIHtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMzVweDtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMHB4XG4gICAgICAgICAgfVxuICAgICAgICAgIC5kaWktc2xvZ2FuIHtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgICAgIG9wYWNpdHk6IDAuNzU7XG4gICAgICAgICAgICBtYXJnaW46IDAgMCAwLjc1ZW07XG4gICAgICAgICAgfVxuICAgICAgICAgIC5kaWktaW5wdXQge1xuICAgICAgICAgICAgd2lkdGg6IDg3JSAhaW1wb3J0YW50XG4gICAgICAgICAgfVxuICAgICAgICAgIC5kaWktaW1hZ2Uge1xuICAgICAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgICAgICB3aWR0aDogOTUlO1xuICAgICAgICAgICAgbWFyZ2luOiAwIGF1dG87XG4gICAgICAgICAgfVxuICAgICAgICAgIC5kaWktYnV0dG9uIHtcbiAgICAgICAgICAgIG1hcmdpbjogMTVweCAwcHggIWltcG9ydGFudFxuICAgICAgICAgICAgdGV4dC10cmFuc2Zvcm06IG5vbmUgIWltcG9ydGFudDtcbiAgICAgICAgICB9XG4gICAgICAgICAgLm1kbC1kaWFsb2cge1xuICAgICAgICAgICAgei1pbmRleDogMTE7XG4gICAgICAgICAgICBwYWRkaW5nOiAwcHg7XG4gICAgICAgICAgfVxuICAgICAgICAgIC5tZGwtZGlhbG9nX19jb250ZW50IHtcbiAgICAgICAgICAgIHBhZGRpbmc6IDIwcHhcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgICAgIGNvbG9yOiAjMDAwICFpbXBvcnRhbnQ7XG4gICAgICAgICAgfVxuICAgICAgICAgIEBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDQ4MHB4KSB7XG4gICAgICAgICAgICAuZGlpLW1haW4ge1xuICAgICAgICAgICAgICBwYWRkaW5nOiAwIDQwcHg7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICAuZGlpLWFwcC1uYW1lIHtcbiAgICAgICAgICAgICAgZm9udC1zaXplOiA1NnB4O1xuICAgICAgICAgICAgfVxuICAgICAgICAgICAgLmRpaS1zbG9nYW4ge1xuICAgICAgICAgICAgICBmb250LXNpemU6IDIxcHg7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICAuZGlpLWlucHV0IHtcbiAgICAgICAgICAgICAgd2lkdGg6IDYzJSAhaW1wb3J0YW50XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICAuZGlpLWltYWdlIHtcbiAgICAgICAgICAgICAgd2lkdGg6IDY4JTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICB9XG4gICAgICAgICAgQG1lZGlhIHNjcmVlbiBhbmQgKG1pbi13aWR0aDogODQwcHgpIHtcbiAgICAgICAgICAgIC5kaWktaW5wdXQge1xuICAgICAgICAgICAgICB3aWR0aDogNDYlICFpbXBvcnRhbnRcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIC5kaWktaW1hZ2Uge1xuICAgICAgICAgICAgICB3aWR0aDogNTAlO1xuICAgICAgICAgICAgfVxuICAgICAgICAgIH1cbiAgICAgICAgYH08L3N0eWxlPlxuICAgICAgPC9kaXY+XG4gICAgKVxuICB9XG59XG5cbkluZGV4LnByb3BUeXBlcyA9IHt9XG5cbkluZGV4LmRlZmF1bHRQcm9wcyA9IHt9XG5cbmV4cG9ydCBkZWZhdWx0IEluZGV4Il19 */\n/*@ sourceURL=pages/index.js */'
         })
       );
     }
   }]);
 
   return Index;
-}(external__react__default.a.Component);
+}(__WEBPACK_IMPORTED_MODULE_1_react___default.a.Component);
 
-pages_Index.defaultProps = {};
+Index.propTypes = {};
 
-/* harmony default export */ var pages = __webpack_exports__["default"] = (pages_Index);
+Index.defaultProps = {};
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
-/* 9 */
+
+/***/ 2:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("./pages/index.js");
+
+
+/***/ }),
+
+/***/ "axios":
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
 
 /***/ }),
-/* 10 */
+
+/***/ "classnames":
 /***/ (function(module, exports) {
 
-module.exports = require("lodash/isString");
+module.exports = require("classnames");
 
 /***/ }),
-/* 11 */
-/***/ (function(module, exports) {
 
-module.exports = require("react-dom");
-
-/***/ }),
-/* 12 */
+/***/ "debug":
 /***/ (function(module, exports) {
 
 module.exports = require("debug");
 
 /***/ }),
-/* 13 */
-/***/ (function(module, exports) {
 
-module.exports = require("cheerio");
-
-/***/ }),
-/* 14 */
+/***/ "file-saver":
 /***/ (function(module, exports) {
 
 module.exports = require("file-saver");
 
+/***/ }),
+
+/***/ "lodash/isString":
+/***/ (function(module, exports) {
+
+module.exports = require("lodash/isString");
+
+/***/ }),
+
+/***/ "next/router":
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
+
+/***/ }),
+
+/***/ "prop-types":
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types");
+
+/***/ }),
+
+/***/ "react":
+/***/ (function(module, exports) {
+
+module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-dom":
+/***/ (function(module, exports) {
+
+module.exports = require("react-dom");
+
+/***/ }),
+
+/***/ "styled-jsx/style":
+/***/ (function(module, exports) {
+
+module.exports = require("styled-jsx/style");
+
 /***/ })
-/******/ ]);
+
+/******/ });
+//# sourceMappingURL=index.js.map
