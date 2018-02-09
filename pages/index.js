@@ -16,6 +16,7 @@ class Index extends React.Component {
       error: '',
       showCheckUrlModal: false,
       image: null,
+      postId: null,
     }
   }
   onChangeUrl = (value) => {
@@ -42,31 +43,19 @@ class Index extends React.Component {
         error: 'Entered URL is not an instagram.com URL.',
       }))
     } else {
-      this.getImageFromUrl(value)
+      this.getImageFromUrl(value.substring(28 ,39).trim())
     }
   }
 
   getImageFromUrl = (value) => {
-    axios.get(`${window.location.href}get-image/${value.split("/").toString()}`)
+    axios.get(`${window.location.href}get-image/${value}`)
     .then(response => {
+      console.log(response, 'response')
       this.setState({
         url: '',
-        image: response.data.img
+        image: response.data.img,
+        postId: value,
       })
-    })
-  }
-
-  downloadImage = () => {
-    const {image} = this.state
-    axios({
-      method:'get',
-      url:image,
-      responseType:'blob'
-    }).then((response) => {
-      const blob = new Blob([response.data], {type: `${response.headers['content-type']}`})
-      const imageName = `${response.headers.expires}.${response.headers['content-type'].split('/')[1]}`
-      
-      FileSaver.saveAs(blob, imageName)
     })
   }
 
@@ -78,7 +67,7 @@ class Index extends React.Component {
   }
 
   render() {
-    const {url, error, showCheckUrlModal, image} = this.state
+    const {url, error, showCheckUrlModal, image, postId} = this.state
     return (
       <div className="dii-main">
         <h1 className="dii-app-name">Download Instagram</h1>
@@ -97,11 +86,12 @@ class Index extends React.Component {
         {image &&
           <React.Fragment>
             <img src={image} className="dii-image"/>
-            <Button raised ripple color="accent" onClick={this.downloadImage} className="dii-button">
+            <a className="dii-button" href={`/download-image/${postId}`} download>
               Download
-            </Button>
+            </a>
           </ React.Fragment>
         }
+        
         <style jsx global>{`
           .dii-main {
             text-align: center;
@@ -126,8 +116,27 @@ class Index extends React.Component {
             margin: 0 auto;
           }
           .dii-button {
-            margin: 15px 0px !important
-            text-transform: none !important;
+            margin: 15px 0px
+            border: none;
+            border-radius: 2px;
+            position: relative;
+            height: 36px;
+            min-width: 64px;
+            padding: 0 16px;
+            display: inline-block;
+            font-family: "Roboto","Helvetica","Arial",sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0;
+            overflow: hidden;
+            outline: none;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            line-height: 36px;
+            vertical-align: middle;
+            color: rgb(66,66,66);
+            background-color: rgb(105,240,174)
           }
           .mdl-dialog {
             z-index: 11;

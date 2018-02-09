@@ -8,13 +8,28 @@ const handle = app.getRequestHandler()
 
 const cheerio = require('cheerio')
 const request = require('request')
+const fs = require('fs')
 
-function getImage (value) {
+const instagramLink = "https://www.instagram.com/p/"
+
+function getImage (postId) {
+  const instagramPostLink = instagramLink.concat(postId)
+
   return new Promise((resolve, reject) => {
-    request(value.replace(/,/g, "/"), (error, response, body) => {
+    request(instagramPostLink, (error, response, body) => {
       const $ = cheerio.load(body);
       resolve($('meta[property="og:image"]').attr('content'))
     })
+  })
+}
+
+async function downloadImage (postId, res) {
+  const imageLink = await getImage(postId)
+
+  request.get(imageLink).on('response', r => {
+    res.setHeader('Content-disposition', 'attachment; filename=' + `${postId}.jpg`);
+    res.setHeader('Content-type', r.headers['content-type']);
+    r.pipe(res);
   })
 }
 
@@ -29,8 +44,8 @@ app.prepare()
     })
   })
 
-  server.post('/api/download-image', (req, res) => {
-    return res.json(parseImage())
+  server.get('/download-image/:id', (req, res) => {
+    downloadImage(req.params.id, res)
   })
 
   server.get('*', (req, res) => {
