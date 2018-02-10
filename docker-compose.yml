@@ -1,0 +1,39 @@
+version: "3.3"
+
+services:
+
+  server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+    volumes:
+      - ./bin:/usr/src/app/bin
+      - ./build:/usr/src/app/build
+      - ./components:/usr/src/app/components
+      - ./pages:/usr/src/app/pages
+      - ./server:/usr/src/app/server
+      - ./public:/usr/src/app/public
+      - ./package.json:/usr/src/app/package.json
+      - ./.babelrc:/usr/src/app/.babelrc
+      - ./.editorconfig:/usr/src/app/.editorconfig
+      - ./.eslintrc:/usr/src/app/.eslintrc
+      - ./.eslintignore:/usr/src/app/.eslintignore
+      - ./package.json:/usr/src/app/package.json
+      - ./package-lock.json:/usr/src/app/package-lock.json
+      - ./README.md:/usr/src/app/README.md
+      - ./server.js:/usr/src/app/server.js
+      - ./report.html:/usr/src/app/report.html
+      - ./yarn.lock:/usr/src/app/yarn.lock
+    ports:
+      - 3000:3000
+    networks:
+      - back-tier
+
+networks:
+  back-tier:
+  # front-tier:
+# volumes:
+  # db-data:

@@ -1,0 +1,23 @@
+#!/bin/bash
+ROOT_DIR=`dirname "$(perl -e 'use Cwd "abs_path"; print abs_path(shift)' $0)"`
+
+. "$ROOT_DIR/../constant"
+for f in $ROOT_DIR/../utils/*; do source $f; done
+
+SHA_TAG="stable"
+ARGS=()
+
+for i in "$@"
+do
+case $i in
+-t=*|--tag=*)
+SHA_TAG="${i#*=}"
+shift # past argument=value
+;;
+*)
+ARGS+=("$i")
+;;
+esac
+done
+
+run_terraform -t apply ${ARGS[@]} -var "sha_tag=$SHA_TAG"

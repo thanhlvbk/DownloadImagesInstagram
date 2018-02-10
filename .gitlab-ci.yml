@@ -1,0 +1,55 @@
+image: registry.gitlab.com/particle4dev/build-images:docker-17.07.0-nodejs-8.5.0
+
+# cache
+.default-cache: &default-cache
+  key: "node_modules"
+  paths:
+    - node_modules/
+    - .yarn-cache/
+
+.push-cache: &push-cache
+  cache:
+    <<: *default-cache
+    policy: push
+
+.pull-cache: &pull-cache
+  cache:
+    <<: *default-cache
+    policy: pull
+
+before_script:
+  - docker login -u "gitlab-ci-token" -p "$CI_JOB_TOKEN" "$CI_REGISTRY"
+  - chmod +x -R bin/ && for f in bin/utils/*; do source $f; done
+  - node --version
+  - yarn install --frozen-lockfile --cache-folder .yarn-cache
+
+stages:
+  - build
+  - publish
+
+build:
+  <<: *docker
+  <<: *pull-cache
+  stage: build
+  script:
+    - docker login -u "gitlab-ci-token" -p "$CI_JOB_TOKEN" "$CI_REGISTRY"
+    - npm run build
+    - set +e && docker pull ${CI_REGISTRY_IMAGE}:stable && set -e
+    - docker build --file ${CI_PROJECT_DIR}/Dockerfile.pro --cache-from ${CI_REGISTRY_IMAGE}:stable -t ${CI_REGISTRY_IMAGE}:stable .
+    - docker push ${CI_REGISTRY_IMAGE}:stable
+  only:
+    - master
+
+publish:
+  <<: *docker
+  image: registry.gitlab.com/particle4dev/build-images:docker-17.07.0-python-3.6.1-awscli-1.11.151
+  stage: publish
+  script:
+    - docker login -u "gitlab-ci-token" -p "$CI_JOB_TOKEN" "$CI_REGISTRY"
+    - docker pull ${CI_REGISTRY_IMAGE}:stable
+    - docker logout "$CI_REGISTRY"
+    - loginToAwsEcr
+    - docker tag ${CI_REGISTRY_IMAGE}:stable ${AWS_ECR_URL}:${CI_COMMIT_SHA}
+    - ecrpush -i="${AWS_ECR_URL}" -t="${CI_COMMIT_SHA}"
+  only:
+    - master

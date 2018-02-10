@@ -47,7 +47,6 @@ class Index extends React.Component {
   getImageFromUrl = (value) => {
     axios.get(`${window.location.href}get-image/${value}`)
     .then(response => {
-      console.log(response, 'response')
       this.setState({
         url: '',
         image: response.data.img,

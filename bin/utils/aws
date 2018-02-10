@@ -1,0 +1,35 @@
+#!/bin/bash
+
+function loginToAwsEcr {
+  $(aws ecr get-login --no-include-email --region "${AWS_DEFAULT_REGION}")
+}
+
+# Usage: ecrpush --image="123" <tags=???> <source=???>
+function ecrpush {
+  for i in "$@"
+  do
+  case $i in
+  -i=*|--image=*)
+  IMAGE="${i#*=}"
+  shift # past argument=value
+  ;;
+  -t=*|--tag=*)
+  TAG="${i#*=}"
+  shift # past argument=value
+  ;;
+  *)
+  # unknown option
+  ;;
+  esac
+  done
+  if [ -z $IMAGE ];
+  then
+    echo "No image specified"
+    exit 1
+  fi
+  if [ -z $TAG ];
+  then
+    TAG="latest"
+  fi
+  docker push ${IMAGE}:${TAG}
+}
