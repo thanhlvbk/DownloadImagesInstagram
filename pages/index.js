@@ -103,7 +103,7 @@ class Index extends React.Component {
             margin: 0 0 0.75em;
           }
           .dii-input {
-            width: 87% !important
+            width: 87% !important;
           }
           .dii-image {
             display: block;
@@ -111,7 +111,7 @@ class Index extends React.Component {
             margin: 0 auto;
           }
           .dii-button {
-            margin: 15px 0px
+            margin: 15px 0px;
             border: none;
             border-radius: 2px;
             position: relative;
@@ -131,14 +131,14 @@ class Index extends React.Component {
             line-height: 36px;
             vertical-align: middle;
             color: rgb(66,66,66);
-            background-color: rgb(105,240,174)
+            background-color: rgb(105,240,174);
           }
           .mdl-dialog {
             z-index: 11;
             padding: 0px;
           }
           .mdl-dialog__content {
-            padding: 20px
+            padding: 20px;
             font-size: 14px;
             color: #000 !important;
           }
@@ -153,7 +153,7 @@ class Index extends React.Component {
               font-size: 21px;
             }
             .dii-input {
-              width: 63% !important
+              width: 63% !important;
             }
             .dii-image {
               width: 68%;
@@ -161,7 +161,7 @@ class Index extends React.Component {
           }
           @media screen and (min-width: 840px) {
             .dii-input {
-              width: 46% !important
+              width: 46% !important;
             }
             .dii-image {
               width: 50%;
