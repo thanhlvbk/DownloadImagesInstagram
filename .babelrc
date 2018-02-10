@@ -5,6 +5,14 @@
     "stage-1"
   ],
   "plugins": [
-    ["styled-jsx/babel", { "optimizeForSpeed": true }]
+    ["styled-jsx/babel", { "optimizeForSpeed": true }],
+    [
+      "module-resolver", {
+        "root": ["./"],
+        "alias": {
+          "components": "./components"
+        }
+      }
+    ]
   ]
 }

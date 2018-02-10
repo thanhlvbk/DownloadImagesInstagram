@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
-import Router from 'next/router'
-import Textfield from '../components/Textfield'
-import CheckUrlModal from '../components/CheckUrlModal'
+import Textfield from 'components/Textfield'
+import CheckUrlModal from 'components/CheckUrlModal'
 
 class Index extends React.Component {
   constructor(props) {

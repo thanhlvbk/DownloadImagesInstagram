@@ -3,6 +3,9 @@
 # Dependencies
 node_modules/
 
+# Compiled output
+build
+
 # Runtime data
 data/db
 
