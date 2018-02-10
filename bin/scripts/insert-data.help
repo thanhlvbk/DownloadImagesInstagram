@@ -1,0 +1,8 @@
+For example:
+
+  $ ./bin/snail insert-data
+
+Usage: insert-data [options]
+
+Options:
+  --help        : display a short-ish description of the command

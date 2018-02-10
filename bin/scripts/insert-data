@@ -1,0 +1,22 @@
+#!/bin/bash
+ROOT_DIR=`dirname "$(perl -e 'use Cwd "abs_path"; print abs_path(shift)' $0)"`
+
+. "$ROOT_DIR/../constant"
+for f in $ROOT_DIR/../utils/*; do source $f; done
+
+docker run \
+  --rm \
+  -t \
+  mongo:3.4.10 sh -c "mongo -u $MONGO_USER -p $MONGO_PASS --host $MONGO_HOST $MONGO_DB --eval 'db.dropDatabase()'"
+
+for f in $R_DIR/data/*.json; do
+  file=$(basename $f)
+  collection=${file%.*}
+  docker run \
+    --rm \
+    -t \
+    -v $R_DIR/data:/data \
+    mongo:3.4.10 sh -c "mongoimport -u $MONGO_USER -p $MONGO_PASS --host $MONGO_HOST  --db $MONGO_DB --collection $collection --file /data/$file"
+done
+
+

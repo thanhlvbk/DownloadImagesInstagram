@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
-import Router from 'next/router'
-import Textfield from '../components/Textfield'
-import CheckUrlModal from '../components/CheckUrlModal'
+import Textfield from 'components/Textfield'
+import CheckUrlModal from 'components/CheckUrlModal'
 
 class Index extends React.Component {
   constructor(props) {
@@ -47,7 +46,6 @@ class Index extends React.Component {
   getImageFromUrl = (value) => {
     axios.get(`${window.location.href}get-image/${value}`)
     .then(response => {
-      console.log(response, 'response')
       this.setState({
         url: '',
         image: response.data.img,

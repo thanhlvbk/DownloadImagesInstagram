@@ -1,0 +1,18 @@
+{
+  "presets": [
+    "es2015-node5",
+    "react",
+    "stage-1"
+  ],
+  "plugins": [
+    ["styled-jsx/babel", { "optimizeForSpeed": true }],
+    [
+      "module-resolver", {
+        "root": ["./"],
+        "alias": {
+          "components": "./components"
+        }
+      }
+    ]
+  ]
+}

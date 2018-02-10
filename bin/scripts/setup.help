@@ -1,0 +1,9 @@
+For example:
+
+  $ ./bin/snail setup
+
+Usage: setup [options]
+
+Options:
+  --help      : display a short-ish description of the command
+  -e | --env  : specify environment (default: development) (development | staging | production)
