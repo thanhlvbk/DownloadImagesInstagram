@@ -67,23 +67,23 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 35);
+/******/ 	return __webpack_require__(__webpack_require__.s = 40);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 35:
+/***/ 40:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(36);
+module.exports = __webpack_require__(41);
 
 
 /***/ }),
 
-/***/ 36:
+/***/ 41:
 /***/ (function(module, exports) {
 
-module.exports = require("/var/www/download-images-instagram/node_modules/next/dist/pages/_error.js");
+module.exports = require("next/dist/pages/_error.js");
 
 /***/ })
 
