@@ -83,7 +83,7 @@ module.exports = __webpack_require__(36);
 /***/ 36:
 /***/ (function(module, exports) {
 
-module.exports = require("next/dist/pages/_error.js");
+module.exports = require("/var/www/download-images-instagram/node_modules/next/dist/pages/_error.js");
 
 /***/ })
 
