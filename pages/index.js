@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 import Textfield from 'components/Textfield'
 import CheckUrlModal from 'components/CheckUrlModal'
+import GuideLines from 'components/GuideLines'
 
 class Index extends React.Component {
   constructor(props) {
@@ -86,7 +87,8 @@ class Index extends React.Component {
             </a>
           </ React.Fragment>
         }
-        
+        <GuideLines />
+     
         <style jsx global>{`
           .dii-main {
             text-align: center;
