@@ -2,10 +2,25 @@
   "presets": [
     "es2015-node5",
     "react",
-    "stage-1"
+    "stage-1",
+    [
+      "next/babel",
+      {
+        "styled-jsx": {
+          "plugins": [
+            ["styled-jsx-plugin-sass", {
+                "sassOptions": {
+                  "includePaths": ["./components"],
+                  "precision": 10
+                }
+              }
+            ]
+          ]
+        }
+      }
+    ]
   ],
   "plugins": [
-    ["styled-jsx/babel", { "optimizeForSpeed": true }],
     [
       "module-resolver", {
         "root": ["./"],

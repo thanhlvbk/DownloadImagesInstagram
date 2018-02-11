@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express')
 const next = require('next')
 const config = require('./server/config')
@@ -36,6 +37,12 @@ async function downloadImage (postId, res) {
 app.prepare()
 .then(() => {
   const server = express()
+
+  function relativePath(p) {
+    return path.join(__dirname, p)
+  }
+
+  server.use('/public', express.static(path.join(relativePath('./public'))))
 
   server.get('/get-image/:id', async(req, res) => {
     const img = await getImage(req.params.id)
